@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Home</title>
+</head>
+<body>
+    <h1 class="has-text-centered is-size-1">Employee</h1>
+    <h2 class="subtitle"></h2>
+    <div class="section">
+        <button class="button" id="reimb-submit">
+            <a href="reimb-submit.html">Submit Reimbursement</a> 
+        </button>
+    </div>
+    <div class="section">
+        <div class="container">
+            <div class="dropdown" id="status-ddown">
+                <div class="dropdown-trigger">
+                  <button class="button pt-5 pb-5" aria-haspopup="true" aria-controls="dropdown-menu" id="stat-btn">
+                    <span>
+                        <p>Status</p>
+                        <p id="status-text">all-statuses</p>
+                    </span>
+                  </button>
+                </div>
+                <div class="dropdown-menu" id="status-menu" role="menu">
+                  <div class="dropdown-content">
+                    <a class="dropdown-item" id="approved">
+                      Approved
+                    </a>
+                    <a class="dropdown-item" id="denied">
+                      Denied
+                    </a>
+                    <a class="dropdown-item" id="pending">
+                      Pending
+                    </a>
+                    <a class="dropdown-item is-active" id="all-statuses">
+                        All
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="dropdown" id="type-ddown">
+                <div class="dropdown-trigger">
+                  <button class="button pt-5 pb-5" aria-haspopup="true" aria-controls="dropdown-menu" id="type-btn">
+                    <span>
+                        <p>Type</p>
+                        <p id="type-text">all-types</p>
+                    </span>
+                    <span class="icon is-small">
+                      <i class="fas fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                  </button>
+                </div>
+                <div class="dropdown-menu" id="type-menu" role="menu">
+                  <div class="dropdown-content">
+                    <a class="dropdown-item" id="food">
+                      Food
+                    </a>
+                    <a class="dropdown-item" id="lodging">
+                      Lodging
+                    </a>
+                    <a class="dropdown-item" id="travel">
+                      Travel
+                    </a>
+                    <a class="dropdown-item" id="other">
+                      Other
+                    </a>
+                    <a class="dropdown-item is-active" id="all-types">
+                        All
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <button class="button is-primary is-light pt-5 pb-5" id="fetch-reimbs">Get Reimbursements</button>
+            <table id="reimbs-table" class="table">
+                <thead>
+                    <tr class="has-text-centered">
+                        <th>Status</th>
+                        <th>R-Id</th>
+                        <th>Amount</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                        <th>Submitted By</th>
+                        <th>Submitted On</th>
+                        <th>Receipt</th>
+                        <th>Resolved By</th>
+                        <th>Resolved On</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- modal -->
+    <div class="modal">
+      <div class="modal-background">
+          <div class="modal-content has-background-white py-5 px-5">
+              <h3 class="title mb-6">Receipt</h3>
+              <img id="receipt-img" src="" />
+            </div>
+      </div>
+    </div>
+
+    <button class="button" id="logout">Logout</button>
+    <script src="employee-home.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset = "UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Submit Mints</title>
+</head>
+<body>
+    <form class="submission" id="reimb">
+        <p>
+            <label for="amount">Amount: </label>
+            <input type="number" step="any" id="amount-input">
+        </p>
+        <p>
+            Select Type:
+            <input type="radio" id="lodging" name="type" value="lodging">
+            <label for="lodging">Lodging</label>
+            <input type="radio" id="travel" name="type" value="travel">
+            <label for="travel">Travel</label>
+            <input type="radio" id="food" name="type" value="food">
+            <label for="food">Food</label>
+            <input type="radio" id="other" name="type" value="other">
+            <label for="other">Other</label>
+        </p>
+        <p>
+            <label for="receipt">Upload Receipt:</label>
+            <input type="file" id="receipt" name="img" accept="image/*">
+        </p>
+        <p>
+            <label for="descrip">Description: </label>
+            <textarea id="descrip-input" name="descrip" rows="2" cols="50"></textarea>
+        </p>
+        <p>
+            <button class="button" id="reimb-submit-btn">Submit</button>
+        </p>
+    </form>
+    <p><a href="employee-home.html">employee home</a></p>
+
+    <div id="error-messages">
+    </div>
+    <script src="reimb-submit.js"></script>
+</body>
+</html>
