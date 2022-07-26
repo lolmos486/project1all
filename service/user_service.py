@@ -8,8 +8,8 @@ class UserService():
         self.ud = UserDao()
 
 # Create
-    def create_user(self, user_object):
-        return self.ud.create_user(user_object)
+#     def create_user(self, user_object):
+#         return self.ud.create_user(user_object)
 
 
 # Read - as employee, as finance manager
@@ -33,13 +33,13 @@ class UserService():
 
 # Update - as employee, as finance manager
 
-    def update_user(self, user_obj):
-        return self.ud.update_user(user_obj)
-
-    def update_password(self, user_id, old_pass, new_pass):
-        return self.ud.update_password(user_id, old_pass, new_pass)
+    # def update_user(self, user_obj):
+    #     return self.ud.update_user(user_obj)
+    #
+    # def update_password(self, user_id, old_pass, new_pass):
+    #     return self.ud.update_password(user_id, old_pass, new_pass)
 
 # Delete
-
-    def delete_user(self, user_id):
-        return self.ud.delete_user(user_id)
+#
+#     def delete_user(self, user_id):
+#         return self.ud.delete_user(user_id)
