@@ -13,6 +13,7 @@ now = datetime.datetime.now()
 re = Reimbursement(12.50, now, "other", "trololol", "idgaf", 4)
 us = UserService()
 rs = ReimbService()
+ud = UserDao()
 
 #
 #
@@ -20,13 +21,14 @@ rs = ReimbService()
 # for elem in users:
 #     print(elem)
 
-get_reimb = rs.get_all_reimbs(None, None, None, 'finance_manager')
-for reimb in get_reimb:
-    print(reimb)
+# get_reimb = rs.get_all_reimbs(None, None, None, 'finance_manager')
+# for reimb in get_reimb:
+#     print(reimb)
 
-# print(us.check_password('bob45', 'babyz'))
+print(ud.check_password('bob45', 'babyz'))
 # print(us.check_password('bob45', 'baby'))
 # print(us.check_password('bob4', 'babyz'))
+
 
 
 

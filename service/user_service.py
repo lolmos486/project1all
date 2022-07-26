@@ -25,11 +25,11 @@ class UserService():
         else:
             raise InvalidParamError("Username not in database.")
 
-    def get_user_info(self, username):
-        return self.ud.get_user(username)
-
-    def get_all_users(self):
-        return self.ud.get_all_users()
+    # def get_user_info(self, username):
+    #     return self.ud.get_user(username)
+    #
+    # def get_all_users(self):
+    #     return self.ud.get_all_users()
 
 # Update - as employee, as finance manager
 

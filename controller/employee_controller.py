@@ -73,7 +73,7 @@ def submit_reimb():
             print(filename)
             receipt.save(os.path.join(current_app.config['UPLOAD_FOLDER'], filename))
         else:
-            filename = None
+            raise InvalidParamError('must submit receipt.')
         print(amount, ", ", time, ", ", type, ", ", descrip, ", ", filename, ", ", session['user']['id'])
         reimb = Reimbursement(amount, time, type, descrip, filename, session['user']['id'])
         print(reimb.to_dict())
