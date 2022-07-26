@@ -18,7 +18,7 @@ class ReimbService():
 # Read - as employee, as finance manager
 
     def get_reimb(self, reimb_id):
-        return self.rd.get_reimb()
+        return self.rd.get_reimb(reimb_id)
 
     def get_all_reimbs(self, user_id, filter_status, filter_type, role):
         # print("service: user_id = ", user_id, ", filter-status = ", filter_status, " filter type = ", filter_type)

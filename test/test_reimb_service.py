@@ -23,5 +23,7 @@ def test_get_reimb(mocker):
 
     mocker.patch('dao.reimb_dao.ReimbDao.get_reimb', mock_rd_get_reimb)
     rs = ReimbService()
-    actual = rs.get_reimb(1)
-    assert actual == ''
+    r_id = 1
+    actual = rs.get_reimb(r_id)
+    assert actual == '<model.reimbursement.Reimbursement object at 0x0000024E36CE58B0>'
+
