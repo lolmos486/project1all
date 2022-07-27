@@ -1,47 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset = "UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Login</title>
 
-    <link rel="stylesheet" href="style.css" />
+        <!-- Bulma Version 0.9.0-->
+        <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
+    </head>
 
-    <title>Submit Mints</title>
-</head>
-<body>
-    <form class="submission" id="reimb">
-        <p>
-            <label for="amount">Amount: </label>
-            <input type="number" step="any" id="amount-input">
-        </p>
-        <p>
-            Select Type:
-            <input type="radio" id="lodging" name="type" value="lodging">
-            <label for="lodging">Lodging</label>
-            <input type="radio" id="travel" name="type" value="travel">
-            <label for="travel">Travel</label>
-            <input type="radio" id="food" name="type" value="food">
-            <label for="food">Food</label>
-            <input type="radio" id="other" name="type" value="other" checked>
-            <label for="other">Other</label>
-        </p>
-        <p>
-            <label for="receipt">Upload Receipt:</label>
-            <input type="file" id="receipt" name="img" accept="image/*">
-        </p>
-        <p>
-            <label for="descrip">Description: </label>
-            <textarea id="descrip-input" name="descrip" rows="2" cols="50"></textarea>
-        </p>
-        <p>
-            <button class="button" id="reimb-submit-btn">Submit</button>
-        </p>
-    </form>
-    <p><a href="employee-home.html">employee home</a></p>
+    <body>
+        <section class="hero is-success is-fullheight">
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    <div class="column is-4 is-offset-4">
+                        <h3 class="title has-text-black">Submit</h3>
+                        <hr class="login-hr">
+                        <p class="subtitle has-text-black">Please fill out completeley to proceed.</p>
+                        <div class="box">
+                            <figure class="avatar">
+                                <img src="Ancalagon22dragonslogo.png">
+                            </figure>
+                            <form>
+                                <div class="field" id="reimb">
+                                    <div class="control">                                    
+                                        <label for="amount"><b>Amount: </b></label>
+                                        <input class="input is-large" id="amount-input" type="number" step="any" autofocus="">                                    
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <div class="control">
+                                        <label for="descrip"><strong>Description: </strong></label>
+                                        <textarea class="input is-large"  id="descrip-input" name="descrip" rows="2" cols="50"></textarea>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <div class="control">                                    
+                                    
+                                            <p><strong>Select Type:</strong></p>
+                                            
+                                        <span>
+                                            <input type="radio" id="lodging" name="type" value="lodging">
+                                            <label for="lodging" class="pr-3">Lodging</label>
+                                        </span>
+                                        <span>
+                                            <input type="radio" id="travel" name="type" value="travel">
+                                            <label for="travel" class="pr-3">Travel</label>
+                                        </span>
+                                        <span>
+                                            <input type="radio" id="food" name="type" value="food">
+                                            <label for="food" class="pr-3">Food</label>
+                                        </span>
+                                        <span>
+                                            <input type="radio" id="other" name="type" value="other" checked> 
+                                            <label for="other">Other</label>    
+                                        </span>                 
+                                    </div>
+                                </div>
+                                <p>
+                                    <label for="receipt"><strong>Upload Receipt:</strong></label>
+                                    <input type="file" id="receipt" name="img" accept="image/*">
+                                </p>
+                        
+                                
+                                </div>
+                                <button class="button is-block is-info is-large is-fullwidth" id="reimb-submit-btn">Submit</button>
+                            </form>
+                        
 
-    <div id="error-messages">
-    </div>
-    <script src="reimb-submit.js"></script>
-</body>
+                    <div class="section">
+                        <!-- modal -->
+                        <div class="modal">
+                            <div class="modal-background">
+                                <div class="modal-content has-background-white py-5 px-5 text-is-danger">
+                                    <h3 class="title mb-6 has-text-centered is-danger">Error</h3>
+                                    <div class = "has-text-centered" id="reg-error-msgs"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <script async type="text/javascript" src="../js/bulma.js"></script>
+        <!-- <script src="login.js"></script>  -->
+
+
+        <p><a href="employee-home.html">employee home</a></p>
+        
+        <script src="reimb-submit.js"></script>
+    </body>
+
 </html>

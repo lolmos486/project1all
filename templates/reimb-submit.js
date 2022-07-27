@@ -62,23 +62,15 @@ reimbSubmitBtn.addEventListener('click', async (e) => {
         
         if (result.status == 201) {
             window.location.href = './employee-home.html'
-        }/*
-        else if (res.status == 400) {
-            let data = await res.json();
-            
+        }
+        else if (result.status == 400) {
+            let data = await result.json();
+            console.log(data);
             let errorMessagesDiv = document.getElementById('error-messages')
-            errorMessagesDiv.innerHTML = '';
+            errorMessagesDiv.innerHTML = data.message;
 
-            let errMessages = data.messages;
-            for (let errorMessage of errMessages) {
-                let errorElement = document.createElement('p');
-                errorElement.innerHTML = errorMessage;
-                errorElement.style.color = 'red';
-                errorElement.style.fontWeight = 'bold';
 
-                errorMessagesDiv.appendChild(errorElement);
-            }
-        }*/
+        }
     }
     catch (err) {
         console.log(err);

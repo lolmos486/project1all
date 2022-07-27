@@ -7,109 +7,126 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <title>Home</title>
 </head>
-<body>
-    <h1 class="has-text-centered is-size-1">Finance Manager Home</h1>
-    <h2 class="subtitle"></h2>
-
-    <div class="section">
-        <div class="container">
-            <div class="dropdown" id="status-ddown">
-                <div class="dropdown-trigger">
-                  <button class="button pt-5 pb-5" aria-haspopup="true" aria-controls="dropdown-menu" id="stat-btn">
-                    <span>
-                        <p>Status</p>
-                        <p id="status-text">pending</p>
-                    </span>
-                  </button>
-                </div>
-                <div class="dropdown-menu" id="status-menu" role="menu">
-                  <div class="dropdown-content">
-                    <a class="dropdown-item" id="approved">
-                      Approved
-                    </a>
-                    <a class="dropdown-item" id="denied">
-                      Denied
-                    </a>
-                    <a class="dropdown-item is-active" id="pending">
-                      Pending
-                    </a>
-                    <a class="dropdown-item" id="all-statuses">
-                        All
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="dropdown" id="type-ddown">
-                <div class="dropdown-trigger">
-                  <button class="button pt-5 pb-5" aria-haspopup="true" aria-controls="dropdown-menu" id="type-btn">
-                    <span>
-                        <p>Type</p>
-                        <p id="type-text">all-types</p>
-                    </span>
-                    <span class="icon is-small">
-                      <i class="fas fa-angle-down" aria-hidden="true"></i>
-                    </span>
-                  </button>
-                </div>
-                <div class="dropdown-menu" id="type-menu" role="menu">
-                  <div class="dropdown-content">
-                    <a class="dropdown-item" id="food">
-                      Food
-                    </a>
-                    <a class="dropdown-item" id="lodging">
-                      Lodging
-                    </a>
-                    <a class="dropdown-item" id="travel">
-                      Travel
-                    </a>
-                    <a class="dropdown-item" id="other">
-                      Other
-                    </a>
-                    <a class="dropdown-item is-active" id="all-types">
-                        All
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <button class="button is-primary is-light pt-5 pb-5" id="fetch-reimbs">Get Reimbursements</button>
-            <table id="reimbs-table" class="table">
-                <thead>
-                    <tr class="has-text-centered">
-                      <th>Select</th>
-                      <th>R-Id</th>
-                      <th>Status</th>
-                      <th>Amount</th>
-                      <th>Type</th>
-                      <th>Description</th>
-                      <th>Submitted By</th>
-                      <th>Submitted On</th>
-                      <th>Receipt</th>
-                      <th>Resolved By</th>
-                      <th>Resolved On</th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                </tbody>
-            </table>
-            <div class="has-text-right">
-              <button class="button is-primary" id="approve-reimbs">Approve Selected</button>
-              <button class="button is-danger" id="deny-reimbs">Deny Selected</button>
-            </div>
-        </div>
-    </div>
-    <!-- modal -->
-    <div class="modal">
-      <div class="modal-background">
-          <div class="modal-content has-background-white py-5 px-5">
-              <h3 class="title mb-6">Receipt</h3>
-              <img id="receipt-img" src="" />
-            </div>
+<body>  
+  <section class="hero is-success is-fullheight">
+    <nav class="navbar HAS-SHADOW IS-WHITE">
+      <!--logo / brand -->
+      <div class="navbar-brand">
+          <a class="navbar-item">
+              <img src="/Ancalagon2dragonslogo.png" alt="site-logo" style="max-height: 100px" class="py-2">
+          </a>        
       </div>
+
+      <!-- <div class="navbar-menu" id="nav-links">
+          <div class="navbar-end">
+              <a class="navbar-item" href = "home.html">Home</a>              
+      </div> -->
+  </nav>
+
+      <h1 class="has-text-centered is-size-1">Finance Manager Home</h1>    
+
+      <div class="section">
+          <div class="container">
+              <div class="dropdown" id="status-ddown">
+                  <div class="dropdown-trigger">
+                    <button class="button is-info is-light pt-5 pb-5" aria-haspopup="true" aria-controls="dropdown-menu" id="stat-btn">
+                      <span>
+                          <p>Status</p>
+                          <p id="status-text">pending</p>
+                      </span>
+                    </button>
+                  </div>
+                  <div class="dropdown-menu" id="status-menu" role="menu">
+                    <div class="dropdown-content">
+                      <a class="dropdown-item" id="approved">
+                        Approved
+                      </a>
+                      <a class="dropdown-item" id="denied">
+                        Denied
+                      </a>
+                      <a class="dropdown-item is-active" id="pending">
+                        Pending
+                      </a>
+                      <a class="dropdown-item" id="all-statuses">
+                          All
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="dropdown" id="type-ddown">
+                  <div class="dropdown-trigger">
+                    <button class="button is-info is-light pt-5 pb-5" aria-haspopup="true" aria-controls="dropdown-menu" id="type-btn">
+                      <span>
+                          <p>Type</p>
+                          <p id="type-text">all-types</p>
+                      </span>
+                      <span class="icon is-small">
+                        <i class="fas fa-angle-down" aria-hidden="true"></i>
+                      </span>
+                    </button>
+                  </div>
+                  <div class="dropdown-menu" id="type-menu" role="menu">
+                    <div class="dropdown-content">
+                      <a class="dropdown-item" id="food">
+                        Food
+                      </a>
+                      <a class="dropdown-item" id="lodging">
+                        Lodging
+                      </a>
+                      <a class="dropdown-item" id="travel">
+                        Travel
+                      </a>
+                      <a class="dropdown-item" id="other">
+                        Other
+                      </a>
+                      <a class="dropdown-item is-active" id="all-types">
+                          All
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <button class="button is-info is-info pt-5 pb-5" id="fetch-reimbs">Get Reimbursements</button>
+              <table id="reimbs-table" class="table">
+                  <thead>
+                      <tr class="has-text-centered">
+                        <th>Select</th>
+                        <th>R-Id</th>
+                        <th>Status</th>
+                        <th>Amount</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                        <th>Submitted By</th>
+                        <th>Submitted On</th>
+                        <th>Receipt</th>
+                        <th>Resolved By</th>
+                        <th>Resolved On</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+
+                  </tbody>
+              </table>
+              <div class="has-text-right">
+                <button class="button is-primary has-text-weight-bold" id="approve-reimbs">Approve Selected</button>
+                <button class="button is-danger has-text-weight-bold" id="deny-reimbs">Deny Selected</button>
+              </div>
+          </div>
+      </div>
+     
+
+      <section class="section has-text-centered">
+        <button class="button is-info is-light" id="logout">Logout</button>
+      </section>
+  </section> 
+   <!-- modal -->
+   <div class="modal">
+    <div class="modal-background">
+        <div class="modal-content has-background-white py-5 px-5">
+            <h3 class="title mb-6 text-is-dark">Receipt</h3>
+            <img id="receipt-img" src="" />
+          </div>
     </div>
-
-
-    <button class="button" id="logout">Logout</button>
-    <script src="finance-manager-home.js"></script>
+  </div>
+  <script src="finance-manager-home.js"></script>
 </body>
 </html>
