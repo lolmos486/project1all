@@ -1,10 +1,8 @@
 from flask import Blueprint, request, session, redirect, url_for, render_template
 from service.user_service import UserService
 from service.reimb_service import ReimbService
-from model.reimbursement import Reimbursement
-from model.user import User
 from exception.invalid_param import InvalidParamError
-from flask_cors import CORS
+
 
 uc = Blueprint('user_controller', __name__)
 us = UserService()
@@ -35,15 +33,10 @@ def login():
                 "message": f"{e}"
             }, 400
     elif "user" in session:
-         return {
-             'message': "No more cookies for you."
-         }, 401
-            # if session['role'] == "employee":
-            #     return redirect(url_for("ec.employee_home"))
-            # elif session['role'] == "finance manager":
-            #     return redirect(url_for("fmc.finance_manager_home"))
+         return session["user"], 200
     else:
-        return render_template("login.html")
+        return "something went wrong"
+
 
 @uc.route('/logout', methods=['POST'])
 def logout():

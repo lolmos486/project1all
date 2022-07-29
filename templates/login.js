@@ -25,7 +25,9 @@ loginButton.addEventListener('click', async (e) => {
     })
     
     let data = result.json()
-    
+    console.log(data)
+    console.log(result)
+    console.log(result.status);
 
    if (result.status === 200){
         console.log("status 200")

@@ -3,7 +3,8 @@ let descrip = document.getElementById('descrip-input');
 let reimbSubmitBtn = document.getElementById('reimb-submit-btn');
 let typeBtns = document.querySelectorAll('input[name="type"]');
 let receiptUpload = document.getElementById('receipt')
-
+const modalBg = document.querySelector('.modal-background');
+const modal = document.querySelector('.modal');
 
 // let handleImageUpload = event => {
 //     let files = event.target.files;
@@ -65,8 +66,9 @@ reimbSubmitBtn.addEventListener('click', async (e) => {
         }
         else if (result.status == 400) {
             let data = await result.json();
+            modal.classList.add('is-active')
             console.log(data);
-            let errorMessagesDiv = document.getElementById('error-messages')
+            let errorMessagesDiv = document.getElementById('error-msgs')
             errorMessagesDiv.innerHTML = data.message;
 
 
@@ -75,4 +77,8 @@ reimbSubmitBtn.addEventListener('click', async (e) => {
     catch (err) {
         console.log(err);
     }
+
+    modalBg.addEventListener('click', () => {
+        modal.classList.remove('is-active');
+     })
 })
