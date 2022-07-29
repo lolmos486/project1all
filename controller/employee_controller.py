@@ -70,10 +70,10 @@ def submit_reimb():
             receiptExt = receipt.filename.rsplit('.', 1)[1].lower()
             filename = f'{time}{type}{session["user"]["id"]}'
             filename = filename.replace("-", "").replace(':', '').replace(' ', '').replace('.', '') + '.' + receiptExt
-            print(filename)
+            # print(filename)
             receipt.save(os.path.join(current_app.config['UPLOAD_FOLDER'], filename))
         else:
-            raise InvalidParamError('must submit receipt.')
+            return {'message': 'must submit receipt.' }, 400
         print(amount, ", ", time, ", ", type, ", ", descrip, ", ", filename, ", ", session['user']['id'])
         reimb = Reimbursement(amount, time, type, descrip, filename, session['user']['id'])
         print(reimb.to_dict())

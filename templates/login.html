@@ -1,51 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset = "UTF-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
-    <title>Minty Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login</title>
+    <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet"> -->
+    <!-- Bulma Version 0.9.0-->
+    <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
 </head>
+
 <body>
-    <section class="section">
-        <div class="container">
-            <div class="column is-half is-variable box">
-                <div class="submission">
+    <section class="hero is-success is-fullheight">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <div class="column is-4 is-offset-4">
+                    <h3 class="title has-text-black">Login</h3>
                     
-                    
-                        <div class="field">
-                            <label for="username" class="label">Username</label>
-                            <div class="control">
-                                <input type="text" id="username" class="input">
+                    <p class="subtitle has-text-black">Please login to proceed.</p>
+                    <div class="box">
+                        <figure class="avatar">
+                            <img src="Ancalagon22dragonslogo.png">
+                        </figure>
+                        <form>
+                            <div class="field">
+                                <div class="control">
+                                    <input class="input is-large" id="username" type="username" placeholder="Your Username" autofocus="">
+                                </div>
                             </div>
-                            
-                        </div>
-                        <div class="field">
-                            <label for="password" class="label">Password</label>
-                            <div class="control">
-                                <input type="text" id="password" class="input">
+
+                            <div class="field">
+                                <div class="control">
+                                    <input class="input is-large" id="password" type="password" placeholder="Your Password">
+                                </div>
                             </div>
-                        </div>
-                        <div class="has-text-centered">
-                            <button class="button is-primary is-link" id="login-btn">Submit</button>
-                        </div>
-                        
-                    
-                    <div class="section">
-                        <div id="reg-error-msgs"></div>
-                    </div>
-                </div>
+                        <!--    <div class="field">
+                                <label class="checkbox">
+                                <input type="checkbox">
+                                Remember me
+                                </label>
+                            </div>-->
+                            <button class="button is-block is-info is-large is-fullwidth" id="login-btn">Submit</button>
+                        </form>
+                   <!-- </div>
+                    <p class="has-text-grey">
+                        <a href="../">Sign Up</a> &nbsp;·&nbsp;
+                        <a href="../">Forgot Password</a> &nbsp;·&nbsp;
+                        <a href="../">Need Help?</a>
+                    </p>
+                </div>-->
             </div>
+            <div class="section">
+                
+                
+                </div>
+
+            
         </div>
     </section>
-    
-    <p><a href="reimb-approve.html">Approve-Mint</a></p>
-    <p><a href="reimb-submit.html">Submit Mints</a></p>
-
-
+    <!-- modal -->
+    <div class="modal">
+        <div class="modal-background">
+            <div class="modal-content has-background-white py-5 px-5 text-is-danger">
+                <h3 class="title mb-6 has-text-centered is-danger">Error</h3>
+                <div class = "has-text-centered" id="reg-error-msgs"></div>
+            </div>
+        </div>
+    </div>
     <script src="login.js"></script>
 </body>
+
 </html>

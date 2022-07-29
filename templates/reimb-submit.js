@@ -3,7 +3,8 @@ let descrip = document.getElementById('descrip-input');
 let reimbSubmitBtn = document.getElementById('reimb-submit-btn');
 let typeBtns = document.querySelectorAll('input[name="type"]');
 let receiptUpload = document.getElementById('receipt')
-
+const modalBg = document.querySelector('.modal-background');
+const modal = document.querySelector('.modal');
 
 // let handleImageUpload = event => {
 //     let files = event.target.files;
@@ -62,25 +63,22 @@ reimbSubmitBtn.addEventListener('click', async (e) => {
         
         if (result.status == 201) {
             window.location.href = './employee-home.html'
-        }/*
-        else if (res.status == 400) {
-            let data = await res.json();
-            
-            let errorMessagesDiv = document.getElementById('error-messages')
-            errorMessagesDiv.innerHTML = '';
+        }
+        else if (result.status == 400) {
+            let data = await result.json();
+            modal.classList.add('is-active')
+            console.log(data);
+            let errorMessagesDiv = document.getElementById('error-msgs')
+            errorMessagesDiv.innerHTML = data.message;
 
-            let errMessages = data.messages;
-            for (let errorMessage of errMessages) {
-                let errorElement = document.createElement('p');
-                errorElement.innerHTML = errorMessage;
-                errorElement.style.color = 'red';
-                errorElement.style.fontWeight = 'bold';
 
-                errorMessagesDiv.appendChild(errorElement);
-            }
-        }*/
+        }
     }
     catch (err) {
         console.log(err);
     }
+
+    modalBg.addEventListener('click', () => {
+        modal.classList.remove('is-active');
+     })
 })

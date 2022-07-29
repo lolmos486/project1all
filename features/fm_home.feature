@@ -15,7 +15,7 @@ Feature: Viewing and approving/denying employee reimbursement requests
   Scenario: view pending reimbursement requests
     Given I am logged in as a finance manager
     When I am on my home page
-    Then I will be able to view all reimbursement requests
+    Then I will be able to view all pending reimbursement requests
 
   Scenario: approve reimbursement requests
     Given I am logged in as a finance manager

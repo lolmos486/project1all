@@ -7,6 +7,7 @@ from controller.finance_manager_controller import fmc
 
 UPLOAD_FOLDER = './receipts'
 
+# coverage run -m pytest --verbose && coverage report
 
 
 if __name__ == '__main__':
